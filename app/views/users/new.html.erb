@@ -15,20 +15,51 @@
           </div>
         <% end %>
 
-        <%= form.email_field :email, class: (@user.errors.full_messages_for(:email).any? ? "form-control mb-3 is-invalid" : "form-control mb-3") %>
-        <%= form.text_field :name, class: (@user.errors.full_messages_for(:name).any? ? "form-control mb-3 is-invalid" : "form-control mb-3") %>
-        <%= form.password_field :password, class: (@user.errors.full_messages_for(:password).any? ? "form-control mb-3 is-invalid" : "form-control mb-3") %>
-        <%= form.password_field :password_confirmation, class: (@user.errors.full_messages_for(:password_confirmation).any? ? "form-control mb-3 is-invalid" : "form-control mb-3") %>
+        <div class="form-floating mb-3">
+          <%= form.email_field :email,
+             class: (@user.errors.full_messages_for(:email).any? ? "form-control is-invalid" : "form-control"),
+             placeholder: "email@example.com"
+          %>
+          <%= form.label :email,
+           class: (@user.errors.full_messages_for(:email).any? ? "d-none" : "")
+          %>
+        </div>
 
-        <div class="d-grid mt-3">
+        <div class="form-floating mb-3">
+          <%= form.text_field :name,
+              class: (@user.errors.full_messages_for(:name).any? ? "form-control is-invalid" : "form-control"),
+              placeholder: "Name"
+          %>
+          <%= form.label :name,
+             class: (@user.errors.full_messages_for(:name).any? ? "d-none" : "")
+          %>
+        </div>
+
+        <div class="form-floating mb-3">
+          <%= form.password_field :password,
+              class: (@user.errors.full_messages_for(:password).any? ? "form-control is-invalid" : "form-control"),
+              placeholder: "password"
+          %>
+          <%= form.label :password,
+             class: (@user.errors.full_messages_for(:password).any? ? "d-none" : "")
+          %>
+        </div>
+
+        <div class="form-floating mb-3">
+          <%= form.password_field :password_confirmation,
+              class: (@user.errors.full_messages_for(:password_confirmation).any? ? "form-control is-invalid" : "form-control"),
+              placeholder: "password confirmation"
+          %>
+          <%= form.label :password_confirmation,
+             class: (@user.errors.full_messages_for(:password_confirmation).any? ? "d-none" : "")
+          %>
+        </div>
+        <div class="d-flex flex-column gap-4 mt-4">
           <%= form.submit "Sign up", class: "btn btn-primary" %>
+          <p class="m-0">or</p>
+          <a class="btn btn-secondary" href="<%= sign_in_path %>">Sign In</a>
         </div>
       <% end %>
-
-      <p class="mt-3">or</p>
-      <div class="d-grid">
-        <button class="btn btn-secondary">Sign In</button>
-      </div>
     </div>
   </div>
 </div>

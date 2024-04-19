@@ -4,8 +4,6 @@ class SessionController < ApplicationController
   def create
     @user = User.find_by(email: params[:user][:email].downcase)
 
-
-
     if @user.nil?
       render :new, status: :unprocessable_entity
       return
