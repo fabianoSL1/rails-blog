@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<% unless @posts.present? %>
+  <div class="d-flex flex-column align-items-center">
+    <div class="mx-auto" style="max-width: 480px" >
+      <%= image_tag("blank_canvas_undraw.png", :alt =>  "blank canvas", :class => "img-fluid") %>
+    </div>
+    <button class="btn btn-primary">Write a new post!</button>
+  </div>
+
+<%  end %>
+
+<% @posts.each do |post| %>
+  <p><%= post.title %></p>
+  <p><%= post.content %></p>
+<% end %>
