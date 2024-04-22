@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-4 mt-5">
+        <%= form_with url:password_path(params[:password_reset_token]), scope: :user, method: :put do |form| %>
+          <div class="d-flex flex-column gap-2">
+            <%= form.password_field :password, class: "form-control", placeholder: "New password" %>
+            <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm" %>
+
+            <%= form.submit "Save", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :passwords, only: [:create, :new, :edit, :update], param: :password_reset_token
 end

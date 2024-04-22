@@ -17,10 +17,16 @@
           } %>
           <%= form.label :password %>
         </div>
+
         <div class="d-flex flex-column gap-4 mt-4">
-          <%= form.submit "Sign In", class: "btn btn-primary" %>
+          <div class="d-flex flex-column gap-1">
+            <%= form.submit "Sign In", class: "btn btn-primary" %>
+            <%= link_to "Recovery password", new_password_path, class: "btn btn-outline-secondary" %>
+          </div>
+
           <p class="m-0">or</p>
-          <a class="btn btn-secondary" href="<%= sign_up_path %>">Sign Up</a>
+
+          <%= link_to "Sign up", sign_up_path, class: "btn btn-secondary" %>
         </div>
       <% end %>
     </div>
