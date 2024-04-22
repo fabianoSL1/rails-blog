@@ -35,3 +35,8 @@ pt-BR:
   submit:
     save: "Salvar"
     send: "Enviar"
+
+
+  email:
+    hello: "Hello"
+    recovery_password: "Click here to reset your password."

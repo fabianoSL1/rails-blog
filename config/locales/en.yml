@@ -51,3 +51,7 @@ en:
   submit:
     save: "Save"
     send: "Send"
+
+  email:
+    hello: "Olá"
+    recovery_password: "Clique aqui para redefinir sua senha."
