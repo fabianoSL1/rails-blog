@@ -1,3 +1,7 @@
+<% if @post.comments.present? %>
+  <h3 class="my-5">Comments</h3>
+<% end %>
+
 <% @post.comments.each do |comment| %>
   <div class="mt-3 card">
 
@@ -22,6 +26,11 @@
     <% if comment.user.present? %>
       <div class="card-footer">
         <p class="lead m-0"><%= comment.user.name %></p>
+        <time> <%= comment.created_at %></time>
+      </div>
+    <% else %>
+      <div class="card-footer">
+        <p class="lead m-0">Guest</p>
         <time> <%= comment.created_at %></time>
       </div>
     <% end %>

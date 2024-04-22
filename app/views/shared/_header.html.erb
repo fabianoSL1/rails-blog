@@ -32,9 +32,6 @@
                   <%= Current.user.name %>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "New post", new_post_path, class: "dropdown-item" %></li>
-                  <li><%= link_to "My posts", posts_path, class: "dropdown-item" %></li>
-                  <li><hr class="dropdown-divider"></li>
                   <li><%= link_to "Profile", profile_path, class: "dropdown-item" %></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><%= button_to "Logout", logout_path, method: :delete, class: "dropdown-item" %></li>
