@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get "profile", to: "users#edit"
   put "profile", to: "users#update"
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+
 end

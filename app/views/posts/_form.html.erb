@@ -1,0 +1,12 @@
+<%= form_with model: @post  do |form| %>
+  <div class="d-flex flex-column gap-3">
+    <div class="form-floating">
+      <%= form.text_field :title, class: "form-control", placeholder: "title"%>
+      <label>Title</label>
+    </div>
+
+    <%= form.text_area :content, class: "form-control", placeholder: "Lorem ipsum...", rows: 20 %>
+
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

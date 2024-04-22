@@ -23,7 +23,6 @@ class SessionController < ApplicationController
 
   def destroy
     logout
-    puts Current.user
     redirect_to root_path
   end
 end
