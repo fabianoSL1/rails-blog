@@ -14,11 +14,22 @@
   <div class="container">
     <div class="mt-5 row justify-content-center">
       <div class="col-5">
+        <div class="d-flex align-items-center justify-content-between">
 
-        <%= link_to new_post_path, class: "btn btn-primary my-3", locale: @locale do %>
-          <%= I18n.t "newPost" %>
-        <% end %>
+          <%= link_to new_post_path, class: "btn btn-primary my-3", locale: @locale do %>
+            <%= I18n.t "newPost" %>
+          <% end %>
 
+          <div>
+            <select class="form-select">
+              <option selected>tag</option>
+              <% @tags.each do |tag| %>
+                <option value="<%= tag.id %>"><%= tag.name %></option>
+              <% end %>
+            </select>
+
+          </div>
+        </div>
         <% @posts.each do |post| %>
           <div class="mb-2 card">
             <div class="card-body">
@@ -42,39 +53,9 @@
           </div>
         <% end %>
 
-        <nav>
-          <ul class="mt-4 pagination">
-            <li class="page-item">
-              <a class="page-link" href="<%= posts_path %>" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-
-            <% if @posts.prev_page.present? %>
-              <li class="page-item">
-                <a href="<%= posts_path page: @posts.prev_page %>" class="page-link"><%= @posts.prev_page %></a>
-              </li>
-            <% end %>
-
-            <li class="page-item active">
-              <a href="<%= posts_path page: @posts.prev_page %>" class="page-link"><%= @posts.current_page %></a>
-            </li>
-
-
-            <% if @posts.next_page.present? %>
-              <li class="page-item">
-                <a href="<%= posts_path page: @posts.next_page %>" class="page-link"><%= @posts.next_page %></a>
-              </li>
-            <% end %>
-
-            <li class="page-item">
-              <a class="page-link" href="<%= posts_path page: @posts.total_pages %>" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
+        <div>
+          <%= paginate @posts, window: 1 %>
+        </div>
       </div>
 
     </div>

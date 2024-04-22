@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.order(created_at: :desc).page params[:page]
+    @tags = Tag.all
+    @posts = Post.order(created_at: :desc)
+
+    @posts = @post.where tag: params[:tag] if params[:tag]
+    @posts = @posts.where(title: params[:search]).or(content: params[:search]) if params[:search]
+    @posts = @posts.page(params[:page])
   end
 
   def new
@@ -39,6 +44,11 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    puts @post.tags.empty?
+
+    @post.tags.each do |tag|
+      puts tag.name
+    end
   end
 
   def update

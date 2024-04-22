@@ -1,0 +1,9 @@
+<div class="d-flex flex-wrap gap-2">
+<% @post.tags.each  do |tag| %>
+
+    <%= button_to post_tag_path(@post, tag), method: :delete, class: "btn btn-sm btn-outline-danger" do %>
+      <%= tag.name %>
+    <% end %>
+
+<% end %>
+</div>

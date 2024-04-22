@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     resources :posts do
       resources :comments
+      resources :tags, only: [:create, :destroy]
     end
 
     resources :passwords, only: [:create, :new, :edit, :update], param: :password_reset_token

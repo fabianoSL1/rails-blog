@@ -55,3 +55,10 @@ en:
   email:
     hello: "Olá"
     recovery_password: "Clique aqui para redefinir sua senha."
+  views:
+    pagination:
+      truncate: "..."
+      previous: "previous"
+      first: "first"
+      next: "next"
+      last: "last"

@@ -40,3 +40,10 @@ pt-BR:
   email:
     hello: "Hello"
     recovery_password: "Click here to reset your password."
+  views:
+    pagination:
+      truncate: "..."
+      previous: "anterior"
+      first: "primeira"
+      next: "próxima"
+      last: "última"
