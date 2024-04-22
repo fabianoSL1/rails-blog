@@ -18,8 +18,8 @@ class ProcessFileJob
         if line.include?("!!tags")
           names = line.split("!!tags").last.strip!
 
-          names.split(" ").each do |name|
-            tag = Tag.find_or_create_by(name: name)
+          names.split(",").each do |name|
+            tag = Tag.find_or_create_by(name: name.strip!)
             post.tags << tag
           end
         end

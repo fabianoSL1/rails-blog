@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @tags = Tag.all
+    @tags = Tag.where.associated(:posts)
     @posts = Post.order(created_at: :desc)
 
     if params[:tag_id].present?
