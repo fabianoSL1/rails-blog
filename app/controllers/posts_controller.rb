@@ -52,11 +52,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    puts @post.tags.empty?
-
-    @post.tags.each do |tag|
-      puts tag.name
-    end
   end
 
   def update
