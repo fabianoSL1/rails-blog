@@ -1,4 +1,9 @@
 pt-BR:
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+
   signIn: "Entrar"
   signOut: "Sair"
   signUp: "Cadastrar-se"

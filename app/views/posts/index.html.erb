@@ -53,7 +53,7 @@
 
               <div class="d-flex justify-content-between">
                 <p><%= post.user.name %></p>
-                <time><%= post.created_at %></time>
+                <time><%= I18n.l(post.created_at, format: :default) %></time>
               </div>
             </div>
           </div>

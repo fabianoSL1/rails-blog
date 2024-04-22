@@ -28,7 +28,7 @@
     <% if comment.user.present? %>
       <div class="card-footer">
         <p class="lead m-0"><%= comment.user.name %></p>
-        <time> <%= comment.created_at %></time>
+        <time> <%= I18n.l(comment.created_at, format: :default) %></time>
       </div>
     <% else %>
       <div class="card-footer">
