@@ -7,6 +7,8 @@
 # Deploy
 https://fabiano-blog.fly.dev/
 
+* A pagina é um pouco lenta por conta do fly.io, ele suspende a instância e na nicialização o sidekiq leva um tempo.
+
 # Arquivo para upload de posts
 
 ```
@@ -42,7 +44,7 @@ Corpo da publicação
 	- [x] alterar a senha do usuário loggado.  
    
 - ## Opcionais:
-  - [ ] Se conseguir, escrever testes automatizados simples;
+	- [ ] Se conseguir, escrever testes automatizados simples;
 	- [x] Se conseguir, implemente internacionalização;
 	- [x] Se conseguir, adicione tags aos seus post, assim como filtros para utilizar as tags cadastradas. As tags deverão ser implementadas como uma nova tabela no seu modelo, associada aos posts;
 	- [x] Se conseguir, crie a possibilidade de upload de arquivo TXT para criação de um ou mais posts, ou criação de múltiplas tags, utilizando Sidekiq para processamento assíncrono.
