@@ -19,7 +19,8 @@ class ProcessFileJob
           names = line.split("!!tags").last.strip!
 
           names.split(",").each do |name|
-            tag = Tag.find_or_create_by(name: name.strip!)
+            strip_name = name.strip
+            tag = Tag.find_or_create_by(name: strip_name)
             post.tags << tag
           end
         end
@@ -34,7 +35,7 @@ class ProcessFileJob
             puts tag.name
             puts tag.id
           end
-          post.save
+          puts post.save
 
           post = Post.new(user_id: user_id)
           content = ""
