@@ -28,4 +28,26 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  signIn: "Sign in"
+  signOut: "Sign out"
+  signUp: "Sign Up"
+  profile: "Profile"
+  recoveryPassword: "Recovery password"
+
+  or: "or"
+
+  newPost: "New Post"
+  language: "Language"
+  search: "Search Post"
+
+  title: "Title"
+  body: "Lorem Ipsum..."
+
+  comment: "Comment"
+  comments: "Comments"
+
+  guest: "Guest"
+
+  submit:
+    save: "Save"
+    send: "Send"

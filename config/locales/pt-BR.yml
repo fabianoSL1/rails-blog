@@ -1,0 +1,37 @@
+pt-BR:
+  signIn: "Entrar"
+  signOut: "Sair"
+  signUp: "Cadastrar-se"
+  profile: "Perfil"
+  recoveryPassword: "Recuperar senha"
+
+  or: "ou"
+
+  newPost: "Nova publicação"
+  language: "Linguagem"
+  search: "Procurar publicação"
+
+  title: "Título"
+  body: "Lorem Ipsum..."
+
+  comment: "Comentário"
+  comments: "Comentários"
+
+  guest: "Convidado"
+
+  activerecord:
+    models:
+      user: User
+      comment: Comment
+      session: Session
+    attributes:
+      user:
+        name: "Nome"
+        password: "Senha"
+        password_confirmation: "Confirme sua senha"
+      session:
+        password: "Senha"
+
+  submit:
+    save: "Salvar"
+    send: "Enviar"

@@ -1,19 +1,22 @@
 Rails.application.routes.draw do
-  root "posts#index"
+    root "posts#index"
 
-  post "sign_up", to: "users#create"
-  get "sign_up", to: "users#new"
+    post "sign_up", to: "users#create"
+    get "sign_up", to: "users#new"
 
-  post "sign_in", to: "session#create"
-  get "sign_in", to: "session#new"
-  delete "logout", to: "session#destroy"
+    post "sign_in", to: "session#create"
+    get "sign_in", to: "session#new"
+    delete "logout", to: "session#destroy"
 
-  get "profile", to: "users#edit"
-  put "profile", to: "users#update"
+    get "profile", to: "users#edit"
+    put "profile", to: "users#update"
 
-  resources :posts do
-    resources :comments
-  end
+    put "locale", to: "locales#update"
 
-  resources :passwords, only: [:create, :new, :edit, :update], param: :password_reset_token
+    resources :posts do
+      resources :comments
+    end
+
+    resources :passwords, only: [:create, :new, :edit, :update], param: :password_reset_token
+
 end

@@ -7,7 +7,7 @@
       <%= form_with url: passwords_path, scope: :user do |form| %>
         <div class="d-flex flex-column gap-2">
           <%= form.email_field :email, class: "form-control", placeholder: "email" %>
-          <%= form.submit "Reset password", class: "btn btn-primary" %>
+          <%= form.submit I18n.t("submit.send"), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>

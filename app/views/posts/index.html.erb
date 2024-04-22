@@ -5,7 +5,7 @@
     <div class="mx-auto" style="max-width: 480px" >
       <%= image_tag("blank_canvas_undraw.png", :alt =>  "blank canvas", :class => "img-fluid") %>
     </div>
-    <a href="<%= new_post_path %>" class="btn btn-primary">Write a new post!</a>
+    <a href="<%= new_post_path %>" class="btn btn-primary"><%= I18n.t "newPost" %></a>
   </div>
 
 <%  end %>
@@ -14,15 +14,20 @@
   <div class="container">
     <div class="mt-5 row justify-content-center">
       <div class="col-5">
-        <%= link_to "New post", new_post_path, class: "btn btn-primary my-3" %>
+
+        <%= link_to new_post_path, class: "btn btn-primary my-3", locale: @locale do %>
+          <%= I18n.t "newPost" %>
+        <% end %>
+
         <% @posts.each do |post| %>
           <div class="mb-2 card">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-3">
 
-                <a class="text-decoration-none display-6" href="<%= post_path(post) %>">
+                <a class="text-decoration-none display-6" href="<%= post_path(post, locale: @locale) %>">
                   <%= post.title %>
                 </a>
+
                 <div class="d-flex gap-2 align-items-center">
                   <%= render "posts/actions", :post => post %>
                 </div>
