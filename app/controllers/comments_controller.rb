@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     unless is_owner? or is_post_owner?
-      redirect_to @comment.post status: :unauthorized
+      redirect_to @comment.post, status: :unauthorized
       return
     end
 
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
       return
     end
 
-    redirect_to status: :unauthorized
+    redirect_to @comment.post, status: :unprocessable_entity
   end
 
   private

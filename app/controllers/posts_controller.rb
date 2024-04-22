@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
 
   def index
-    if params[:user_id]
-      @posts = Post.order(created_at: :desc).where(user_id: params[:user_id]).page params[:page]
-      return
-    end
-
     @posts = Post.order(created_at: :desc).page params[:page]
   end
 
@@ -23,7 +18,7 @@ class PostsController < ApplicationController
       return
     end
 
-    render new, status: :unprocessable_entity
+    render new_post_path, status: :unprocessable_entity
   end
 
   def show
@@ -39,7 +34,7 @@ class PostsController < ApplicationController
     end
 
     @post.destroy
-    redirect_to index
+    redirect_to posts_path
   end
 
   def edit

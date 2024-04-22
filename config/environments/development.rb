@@ -90,6 +90,8 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
+  puts config.action_mailer.smtp_settings
+
   Rails.application.routes.default_url_options[:host] = ENV["HOST"]
 
 end
