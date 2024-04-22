@@ -4,6 +4,11 @@ class TagsController < ApplicationController
     @tag = Tag.find_or_create_by(name: params[:name].strip)
     @post = Post.find(params[:post_id])
 
+    if @post.user_id  != Current.user.id
+      redirect_to to post_path(@post), status: :unauthorized
+      return
+    end
+
     if @post.tags.include? @tag
       redirect_to edit_post_path(@post)
       return

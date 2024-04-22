@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
     put "locale", to: "locales#update"
 
+    resources :posts_file, only: [:create, :index]
+
     resources :posts do
       resources :comments
       resources :tags, only: [:create, :destroy]

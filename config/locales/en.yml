@@ -63,3 +63,5 @@ en:
       first: "first"
       next: "next"
       last: "last"
+
+  upload_file: "Publish by file"

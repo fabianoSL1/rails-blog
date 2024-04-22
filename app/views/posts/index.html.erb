@@ -5,6 +5,7 @@
     <div class="mx-auto" style="max-width: 480px" >
       <%= image_tag("blank_canvas_undraw.png", :alt =>  "blank canvas", :class => "img-fluid") %>
     </div>
+
     <a href="<%= new_post_path %>" class="btn btn-primary"><%= I18n.t "newPost" %></a>
   </div>
 
@@ -15,11 +16,14 @@
     <div class="mt-5 row justify-content-center">
       <div class="col-5">
         <div class="d-flex align-items-center justify-content-between">
-
-          <%= link_to new_post_path, class: "btn btn-primary my-3", locale: @locale do %>
-            <%= I18n.t "newPost" %>
-          <% end %>
-
+          <div>
+            <%= link_to new_post_path, class: "btn btn-primary my-3" do %>
+              <%= I18n.t "newPost" %>
+            <% end %>
+            <%= link_to posts_file_index_path, class: "btn btn-primary" do %>
+              <%= I18n.t "upload_file" %>
+            <% end %>
+          </div>
           <div>
             <select class="form-select" id="tag-select">
               <option <%= :selected unless @tag_id %>>tag</option>

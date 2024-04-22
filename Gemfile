@@ -75,3 +75,5 @@ group :test do
 end
 
 gem "pg"
+
+gem "sidekiq", "~> 7.2"
