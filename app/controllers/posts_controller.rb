@@ -4,8 +4,16 @@ class PostsController < ApplicationController
     @tags = Tag.all
     @posts = Post.order(created_at: :desc)
 
-    @posts = @post.where tag: params[:tag] if params[:tag]
-    @posts = @posts.where(title: params[:search]).or(content: params[:search]) if params[:search]
+    if params[:tag_id].present?
+      @tag_id = +params[:tag_id]
+      @posts = @posts.joins(:tags).where(tags: { id: @tag_id })
+    end
+
+    if params[:search].present?
+      @search = "%#{params[:search]}%"
+      @posts = @posts.where("title like ? or content like ?", @search, @search)
+    end
+
     @posts = @posts.page(params[:page])
   end
 

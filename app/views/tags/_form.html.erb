@@ -1,6 +1,6 @@
 <%= form_with model: @tag, url: post_tags_path(@post) do |form| %>
   <div class="d-flex gap-2 py-3">
     <%= form.text_field :name, class: "form-control", placeholder: "tag" %>
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit t("submit.add"), class: "btn btn-primary" %>
   </div>
 <% end %>

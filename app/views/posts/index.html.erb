@@ -21,11 +21,13 @@
           <% end %>
 
           <div>
-            <select class="form-select">
-              <option selected>tag</option>
+            <select class="form-select" id="tag-select">
+              <option <%= :selected unless @tag_id %>>tag</option>
               <% @tags.each do |tag| %>
-                <option value="<%= tag.id %>"><%= tag.name %></option>
+                <option value="<%= tag.id %>" <%= :selected if @tag_id == tag.id.to_s %>><%= tag.name %></option>
               <% end %>
+
+
             </select>
 
           </div>
@@ -61,3 +63,20 @@
     </div>
   </div>
 <% end %>
+
+<script>
+    function handler (event) {
+        if (event.target.value !== "tag") {
+            window.location.href = "/?tag_id=" + event.target.value
+        } else {
+            window.location.href = "/"
+        }
+    }
+
+    try {
+        tagSelect.addEventListener("change", handler)
+    } catch {
+        let tagSelect = document.getElementById("tag-select")
+        tagSelect.addEventListener("change", handler)
+    }
+</script>

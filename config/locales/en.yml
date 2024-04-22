@@ -51,6 +51,7 @@ en:
   submit:
     save: "Save"
     send: "Send"
+    add: "Add"
 
   email:
     hello: "Olá"
