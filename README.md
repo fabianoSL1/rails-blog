@@ -10,6 +10,10 @@ https://fabiano-blog.fly.dev/
 * A pagina é um pouco lenta por conta do fly.io, ele suspende a instância e na nicialização o sidekiq leva um tempo.
 
 # Arquivo para upload de posts
+- `!!title` O que vier a seguir vai ser o titulo da publicação.
+- `!!tags` É opcional, deve conter as tags separadas por virgula.
+- `!!post` Indica o fim do post.
+- As demais linhas antes de `!!post` fazem parte do corpo da publicação.
 
 ```
 !!title Ola mundo
